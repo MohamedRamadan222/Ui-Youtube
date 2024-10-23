@@ -1,0 +1,291 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f9f9f9;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 15px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.left-section img {
+  width: 100px;
+  margin-left: 15px;
+}
+
+.mid-section {
+  display: flex;
+  align-items: center;
+  margin-left: 70px;
+}
+
+.mid-section form {
+  display: flex;
+  width: 400px;
+  height: 40px;
+}
+
+.mid-section input {
+  width: 100%;
+  border-radius: 2px 0 0 2px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #d3d3d3;
+  border-right: none;
+}
+
+.mid-section button {
+  width: 64px;
+  border: 1px solid #d3d3d3;
+  border-radius: 0 2px 2px 0;
+  padding-top: 4px;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+.mid-section button:hover {
+  background-color: #f0f0f0;
+  border-color: #c6c6c6;
+}
+
+.mid-section .mic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.right-section a {
+  padding: 5px;
+  margin-right: 15px;
+  color: #030303;
+  text-decoration: none;
+}
+
+
+.content-aria {
+  display: flex;
+  margin-top: 60px;
+  height: calc(100vh - 60px);
+}
+
+
+aside {
+  position: fixed;
+  left: 0;
+  width: 240px;
+  height: calc(100vh - 60px);
+  background-color: white;
+  overflow-y: auto;
+}
+
+nav {
+  padding: 12px 12px 12px 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.nav-link span {
+  margin-left: 24px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.nav-link.active {
+  background-color: #e5e5e5;
+}
+
+#active-span {
+  font-weight: 500;
+}
+
+nav hr {
+  height: 1px;
+  background-color: #e5e5e5;
+  border: none;
+  margin: 10px 0;
+}
+
+nav p {
+  font-size: 14px;
+  color: #606060;
+  font-weight: 500;
+  padding: 8px 16px;
+  text-transform: uppercase;
+}
+
+.chanel-img {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+}
+
+main {
+  margin-left: 240px;
+  padding: 20px;
+  width: calc(100% - 240px);
+}
+
+.videos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.video {
+  cursor: pointer;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-details {
+  display: flex;
+  margin-top: 12px;
+}
+
+.creator-img img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-title {
+  color: rgb(3, 3, 3);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.video-creator {
+  color: rgb(96, 96, 96);
+  text-decoration: none;
+  margin-bottom: 4px;
+}
+
+.title span {
+  color: rgb(96, 96, 96);
+  font-size: 14px;
+}
+
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+}
+
+
+@media (max-width: 1200px) {
+  .videos-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 960px) {
+  .videos-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  aside {
+    width: 70px;
+  }
+  
+  .nav-link span {
+    display: none;
+  }
+  
+  main {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+  }
+  
+  .videos-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .mid-section form {
+    width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .videos-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .mid-section form {
+    width: 200px;
+  }
+  
+  .left-section img {
+    display: none;
+  }
+}
